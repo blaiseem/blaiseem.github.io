@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://jsfiddle.net/thatdataguyau/9w63dmLk/embedded/ -->
+<html><head>
+    
+    
+    <title>JSFiddle</title>
+
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    
+
+  </head>
+  <body>
+
+    <div id="chartMargin" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+</body>
+
+<script>
+
+    
+    Highcharts.chart('chartMargin', {
+legend: {
+useHTML: true
+},
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Strength of Schedule (Expected Margin)'
+    },
+    xAxis: {
+        categories: ["NTH", "COL", "MEL", "ESS", "CAR", "HAW", "GEE", "GWS", "SYD", "FRE", "GCS", "WBD", "RIC", "WCE", "PRT", "BRL", "ADE", "STK"]
+    },
+    yAxis: [{ // Primary yAxis
+        title: {
+            text: 'Expected Margin from Fair Fixture',
+        },
+        labels: {
+        useHTML: true
+        
+        },
+        min:-100, max:100
+    }, { // Secondary yAxis
+        title: {
+            text: 'Team Strength'
+        },
+        opposite: true,
+        min:0, max:1
+    }],
+ 
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+            
+        }
+    },
+    series: [{"type": "column", "name": "Expected Margin (No Playing Self)", "data": [5.72, 16.98, 24.39, 12.34, -36.46, 10.77, 15.01, 4.95, -1.99, -26.43, -42.21, -11.84, 22.92, 20.16, 2.44, -8.26, 6.51, -15.15]}, {"type": "column", "name": "Expected Margin (HGA)", "data": [-30.0, -7.7, -26.39, -32.44, -30.38, 3.16, -21.49, -14.02, 5.96, 28.34, -4.01, -12.03, 3.92, 29.7, 20.48, 19.4, 39.22, 28.28]}, {"type": "column", "name": "Expected Margin (Opponent Strength)", "data": [-28.52, -59.51, -41.13, -3.59, 44.23, -33.63, -11.93, -5.42, -18.44, -2.18, 46.24, 29.81, -17.59, -31.11, -2.49, 26.32, 10.67, 55.12]}, {"type": "line", "name": "Expected Margin (Total)", "data": [-52.81, -50.22, -43.13, -23.69, -22.62, -19.7, -18.41, -14.48, -14.47, -0.27, 0.03, 5.94, 9.24, 18.75, 20.43, 37.45, 56.39, 68.26], "marker": {"enabled": false, "symbol": "circle"}}, {"type": "line", "name": "Team Strength", "data": [0.55, 0.64, 0.7, 0.6, 0.18, 0.59, 0.62, 0.54, 0.48, 0.27, 0.18, 0.4, 0.71, 0.67, 0.52, 0.43, 0.55, 0.37], "yAxis": 1, "lineWidth": 0, "states": {"hover": {"lineWidthPlus": 0}}}]
+});
+
+</script>
+
+</html>
