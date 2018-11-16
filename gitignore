@@ -1,1 +1,3 @@
 create-dir-listing.py
+.ipynb_checkpoints
+*.ipynb
